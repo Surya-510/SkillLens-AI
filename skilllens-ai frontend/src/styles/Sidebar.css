@@ -1,0 +1,562 @@
+/* =========================================================
+   SKILL LENS - MAIN SIDEBAR
+   ========================================================= */
+
+/* =========================
+   APP SHELL
+   ========================= */
+
+.app-shell {
+    min-height: 100vh;
+    width: 100%;
+    background: #07111f;
+}
+
+/* =========================
+   MAIN CONTENT
+   IMPORTANT:
+   Sidebar width = 260px
+   So content starts after sidebar.
+   ========================= */
+
+.app-content {
+    margin-left: 260px;
+    min-height: 100vh;
+    width: calc(100% - 260px);
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+}
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 260px;
+    height: 100vh;
+
+    padding: 22px 15px;
+
+    box-sizing: border-box;
+
+    background: #08111f;
+
+    border-right: 1px solid #1e293b;
+
+    color: #e2e8f0;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   BRAND
+   ========================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 8px 10px 24px;
+
+    border-bottom: 1px solid rgba(30, 41, 59, 0.8);
+
+    margin-bottom: 20px;
+}
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 25px rgba(37, 99, 235, 0.25);
+}
+
+.brand strong {
+    display: block;
+
+    color: #f8fafc;
+
+    font-size: 17px;
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+.brand small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    letter-spacing: 0.04em;
+}
+
+/* =========================
+   SECTION LABEL
+   ========================= */
+
+.side-label {
+    margin: 18px 10px 8px;
+
+    color: #475569;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+/* =========================
+   SIDEBAR LINKS
+   ========================= */
+
+.side-link {
+    width: 100%;
+
+    min-height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px 13px;
+
+    margin-bottom: 4px;
+
+    box-sizing: border-box;
+
+    border: 1px solid transparent;
+
+    border-radius: 11px;
+
+    background: transparent;
+
+    color: #94a3b8;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.side-link svg {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+
+    color: #64748b;
+
+    transition: color 0.2s ease;
+}
+
+.side-link span {
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+/* =========================
+   HOVER
+   ========================= */
+
+.side-link:hover {
+    background: rgba(37, 99, 235, 0.10);
+
+    color: #e2e8f0;
+
+    transform: translateX(2px);
+}
+
+.side-link:hover svg {
+    color: #60a5fa;
+}
+
+/* =========================
+   ACTIVE
+   ========================= */
+
+.side-link.active {
+    background: linear-gradient(
+        135deg,
+        rgba(37, 99, 235, 0.22),
+        rgba(124, 58, 237, 0.18)
+    );
+
+    color: #ffffff;
+
+    border-color: rgba(96, 165, 250, 0.18);
+
+    box-shadow:
+        0 8px 25px rgba(37, 99, 235, 0.10);
+}
+
+.side-link.active svg {
+    color: #60a5fa;
+}
+
+/* =========================
+   LOGOUT
+   ========================= */
+
+.logout-link {
+    width: 100%;
+
+    min-height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px 13px;
+
+    margin-top: auto;
+
+    box-sizing: border-box;
+
+    border: 1px solid transparent;
+
+    border-radius: 11px;
+
+    background: transparent;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.logout-link svg {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+}
+
+.logout-link:hover {
+    background: rgba(239, 68, 68, 0.10);
+
+    color: #fca5a5;
+
+    border-color: rgba(239, 68, 68, 0.15);
+}
+
+/* =========================
+   SIDEBAR SCROLLBAR
+   ========================= */
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #1e293b;
+
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
+
+/* =========================
+   PUBLIC PAGES
+   ========================= */
+
+.public-layout {
+    min-height: 100vh;
+
+    width: 100%;
+}
+
+.public-main {
+    min-height: 100vh;
+
+    width: 100%;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 230px;
+    }
+
+    .app-content {
+        margin-left: 230px;
+
+        width: calc(100% - 230px);
+    }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 230px;
+
+        transform: translateX(-100%);
+
+        transition: transform 0.25s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .app-content {
+        margin-left: 0;
+
+        width: 100%;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+
+@media (max-width: 480px) {
+
+    .sidebar {
+        width: 250px;
+    }
+
+    .app-content {
+        width: 100%;
+    }
+}
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.mobile-menu-btn,
+.sidebar-overlay {
+    display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .app-shell {
+        position: relative;
+    }
+
+
+    .sidebar {
+
+        width: min(280px, 86vw);
+
+        transform: translateX(-105%);
+
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+
+        box-shadow: none;
+
+    }
+
+
+    .sidebar.open {
+
+        transform: translateX(0);
+
+        box-shadow:
+            18px 0 45px
+            rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    .app-content {
+
+        margin-left: 0 !important;
+
+        width: 100% !important;
+
+        min-width: 0;
+
+    }
+
+
+    /* =====================================================
+       HAMBURGER BUTTON
+    ===================================================== */
+
+    .mobile-menu-btn {
+
+        position: fixed;
+
+        top: 14px;
+        left: 14px;
+
+        z-index: 1200;
+
+        width: 44px;
+        height: 44px;
+
+        display: grid;
+        place-items: center;
+
+        border:
+            1px solid
+            rgba(96, 165, 250, 0.25);
+
+        border-radius: 12px;
+
+        background:
+            rgba(8, 17, 31, 0.94);
+
+        color: #e2e8f0;
+
+        box-shadow:
+            0 8px 24px
+            rgba(0, 0, 0, 0.25);
+
+        cursor: pointer;
+
+        backdrop-filter: blur(12px);
+
+    }
+
+
+    .mobile-menu-btn svg {
+
+        width: 18px;
+        height: 18px;
+
+    }
+
+
+    /* =====================================================
+       OVERLAY
+    ===================================================== */
+
+    .sidebar-overlay {
+
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 900;
+
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        padding: 0;
+
+        border: 0;
+
+        background:
+            rgba(0, 0, 0, 0.52);
+
+        cursor: pointer;
+
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 769px) {
+
+    .mobile-menu-btn,
+    .sidebar-overlay {
+
+        display: none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .mobile-menu-btn {
+
+        top: 10px;
+        left: 10px;
+
+        width: 42px;
+        height: 42px;
+
+    }
+
+}

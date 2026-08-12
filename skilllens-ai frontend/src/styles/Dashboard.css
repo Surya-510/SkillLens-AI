@@ -1,0 +1,739 @@
+/* =========================================================
+   DASHBOARD PAGE
+   ========================================================= */
+
+.dashboard-page {
+    /* Sidebar space */
+    /* margin-left: 260px;
+    width: calc(100% - 260px); */
+
+    min-height: 100vh;
+    padding: 45px;
+
+    box-sizing: border-box;
+
+    color: #e2e8f0;
+
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(37, 99, 235, 0.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(124, 58, 237, 0.12),
+            transparent 30%
+        ),
+        #07111f;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.dashboard-header {
+    margin-bottom: 35px;
+    animation: dashboardFade 0.7s ease;
+}
+
+.dashboard-badge {
+    display: inline-block;
+
+    padding: 7px 14px;
+    border-radius: 30px;
+
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+
+    color: #a5b4fc;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.dashboard-header h1 {
+    margin: 18px 0 10px;
+
+    font-size: 42px;
+    font-weight: 800;
+
+    color: #f8fafc;
+}
+
+.dashboard-header h1 span {
+    background: linear-gradient(
+        90deg,
+        #60a5fa,
+        #a78bfa
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.dashboard-header p {
+    max-width: 700px;
+
+    color:#f8fafc;
+    color: transparent;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.dashboard-stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.dashboard-card {
+    padding: 24px;
+
+    border-radius: 20px;
+
+    background: rgba(11, 23, 41, 0.78);
+
+    border: 1px solid #1e293b;
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.3s ease;
+
+    animation: cardUp 0.7s ease;
+
+    box-sizing: border-box;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 14px;
+
+    background: rgba(37, 99, 235, 0.14);
+
+    color: #60a5fa;
+
+    font-size: 20px;
+}
+
+.stat-card h6 {
+    margin: 0 0 8px;
+
+    color: #94a3b8;
+}
+
+.stat-card h2 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 32px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.dashboard-main {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+
+    gap: 20px;
+}
+
+.dashboard-panel {
+    min-height: 380px;
+
+    padding: 26px;
+
+    border-radius: 20px;
+
+    background: rgba(11, 23, 41, 0.78);
+
+    border: 1px solid #1e293b;
+
+    backdrop-filter: blur(12px);
+
+    animation: cardUp 0.9s ease;
+
+    box-sizing: border-box;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+}
+
+.panel-header h3 {
+    margin: 0 0 7px;
+
+    color: #f8fafc;
+
+    font-size: 20px;
+}
+
+.panel-header p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.panel-header > svg {
+    color: #60a5fa;
+
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   CHART
+   ========================================================= */
+
+.chart-container {
+    width: 100%;
+    height: 300px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   RESUME PREVIEW
+   ========================================================= */
+
+.resume-preview {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+    margin-top: 30px;
+
+    border-radius: 14px;
+
+    background: rgba(30, 41, 59, 0.45);
+
+    border: 1px solid #263852;
+
+    box-sizing: border-box;
+}
+
+.resume-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: rgba(239, 68, 68, 0.12);
+
+    color: #f87171;
+
+    font-size: 20px;
+}
+
+.resume-preview h4 {
+    margin: 0 0 5px;
+
+    color: #f8fafc;
+
+    font-size: 14px;
+
+    word-break: break-word;
+}
+
+.resume-preview small {
+    color: #64748b;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.resume-actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    border: 1px solid #263852;
+
+    background: #0b1729;
+
+    color: #cbd5e1;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+
+    border-color: #60a5fa;
+
+    color: #fff;
+}
+
+.primary-action {
+    border: none;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+}
+
+.primary-action:hover {
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+.danger-action {
+    color: #fca5a5;
+}
+
+.danger-action:hover {
+    border-color: #ef4444;
+
+    color: #fecaca;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.no-resume {
+    text-align: center;
+
+    padding: 35px 15px;
+}
+
+.empty-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 18px;
+
+    background: rgba(99, 102, 241, 0.1);
+
+    color: #818cf8;
+
+    font-size: 25px;
+}
+
+.no-resume h4 {
+    color: #f8fafc;
+}
+
+.no-resume p {
+    color: #64748b;
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    max-width: 330px;
+
+    margin: 10px auto 20px;
+}
+
+.upload-btn {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.quick-section {
+    margin-top: 25px;
+}
+
+.quick-section h3 {
+    color: #f8fafc;
+
+    margin-bottom: 15px;
+}
+
+.quick-actions {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+.quick-actions button {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    border: 1px solid #1e293b;
+
+    background: rgba(11, 23, 41, 0.75);
+
+    color: #cbd5e1;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+    box-sizing: border-box;
+}
+
+.quick-actions button svg {
+    color: #60a5fa;
+}
+
+.quick-actions button:hover {
+    transform: translateY(-4px);
+
+    border-color: #3b82f6;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading-page {
+    min-height: 80vh;
+
+    display: grid;
+    place-items: center;
+}
+
+.loading-box {
+    text-align: center;
+}
+
+.loading-box h3 {
+    margin-top: 20px;
+
+    color: #f8fafc;
+}
+
+.loading-box p {
+    color: #64748b;
+}
+
+.loading-spinner {
+    width: 45px;
+    height: 45px;
+
+    margin: auto;
+
+    border: 4px solid #1e293b;
+    border-top-color: #6366f1;
+
+    border-radius: 50%;
+
+    animation: dashboardSpin 0.8s linear infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes dashboardFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dashboardSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+    .dashboard-page {
+        padding: 35px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .dashboard-page {
+        margin-left: 0;
+        width: 100%;
+
+        padding: 25px 18px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 30px;
+    }
+
+    .dashboard-header p {
+        font-size: 14px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-panel {
+        padding: 20px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+    .dashboard-page {
+        padding: 20px 14px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 26px;
+    }
+
+    .dashboard-card {
+        padding: 18px;
+    }
+
+    .dashboard-panel {
+        padding: 18px;
+    }
+
+    .resume-preview {
+        align-items: flex-start;
+    }
+
+    .resume-actions {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* =========================================================
+   CURRENT RESUME ACTIONS
+========================================================= */
+
+.current-resume-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.current-resume-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.resume-file-name {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.current-resume-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+.resume-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .current-resume-wrapper {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .current-resume-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .current-resume-wrapper {
+        gap: 18px;
+    }
+
+    .current-resume-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .resume-action-btn {
+        width: 100%;
+        min-height: 44px;
+    }
+
+    .current-resume-info h4 {
+        font-size: 1.15rem;
+    }
+
+    .resume-file-name {
+        font-size: 0.9rem;
+    }
+
+}

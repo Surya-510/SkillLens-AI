@@ -1,0 +1,12 @@
+package com.surya.skilllens.dto;
+
+import lombok.Data;
+
+@Data
+public class InterviewQA {
+
+    private String question;
+
+    private String answerKey;
+
+}
