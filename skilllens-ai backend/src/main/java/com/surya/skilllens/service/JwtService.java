@@ -4,6 +4,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
@@ -13,16 +14,15 @@ import java.util.Date;
 @Service
 public class JwtService {
 
-    private static final String SECRET =
-            "SkillLensSecretKeyForJWTAuthentication2026SpringBootJava123456";
+    @Value("${jwt.secret}")
+    private String secret;
 
     private SecretKey getSigningKey() {
 
         return Keys.hmacShaKeyFor(
-                SECRET.getBytes(StandardCharsets.UTF_8)
+                secret.getBytes(StandardCharsets.UTF_8)
         );
     }
-
 
     public String generateToken(
             String username,
@@ -46,7 +46,6 @@ public class JwtService {
                 .compact();
     }
 
-
     public String extractUsername(
             String token
     ) {
@@ -58,7 +57,6 @@ public class JwtService {
                 .getBody()
                 .getSubject();
     }
-
 
     public String extractRole(
             String token
