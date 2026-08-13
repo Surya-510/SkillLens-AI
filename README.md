@@ -34,10 +34,11 @@ https://github.com/user-attachments/assets/6d9cbd9c-0a45-4d6f-862a-4427a2f42e7c
 
 ### Frontend
 
+* ReactJs
 * HTML
 * CSS
 * JavaScript
-* Bootstrap
+* Vite
 
 ### Backend
 
@@ -46,6 +47,7 @@ https://github.com/user-attachments/assets/6d9cbd9c-0a45-4d6f-862a-4427a2f42e7c
 * Spring Security
 * REST API
 * JWT
+* Maven
 
 ### Database
 
